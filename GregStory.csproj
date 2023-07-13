@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>GregStory</RootNamespace>
+
+		<BinaryDir>$(SolutionDir)/builds/$(AssemblyName)/</BinaryDir>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
+
+		<Reference Include="VintagestoryAPI">
+			<HintPath>D:\Games\Vintagestory 1.18.6\VintagestoryAPI.dll</HintPath>
+		</Reference>
+		<Reference Include="VintagestoryLib">
+			<HintPath>D:\Games\Vintagestory 1.18.6\VintagestoryLib.dll</HintPath>
+		</Reference>
+		<Reference Include="VSEssentials">
+			<HintPath>D:\Games\Vintagestory 1.18.6\Mods\VSEssentials.dll</HintPath>
+		</Reference>
+		<Reference Include="VSSurvivalMod">
+			<HintPath>D:\Games\Vintagestory 1.18.6\Mods\VSSurvivalMod.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="modinfo.json" CopyToOutputDirectory="PreserveNewest" />
+		<EmbeddedResource Include="Assets\**" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+
+	<Target Name="CopyToBin" AfterTargets="AfterBuild" Condition="'$(Configuration)' == 'Debug'">
+		<Copy SourceFiles="@(AssetFiles)" DestinationFiles="@(AssetFiles->'$(BinaryDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)')" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BinaryDir)" />
+		<Copy SourceFiles="$(TargetDir)/$(TargetName).pdb" DestinationFolder="$(BinaryDir)" />
+		<Copy SourceFiles="$(TargetDir)/modinfo.json" DestinationFolder="$(BinaryDir)" />
+	</Target>
+
+	<Target Name="CleanBin" AfterTargets="Clean" Condition="'$(Configuration)' == 'Debug'">
+		<RemoveDir Directories="$(SolutionDir)/builds;" />
+	</Target>
+</Project>

@@ -1,0 +1,20 @@
+[
+	{
+		op: "add",
+		path: "/enabled",
+		value: false,
+		file: "game:recipes/alloy/cupronickel.json"
+	},
+	{
+		op: "add",
+		path: "/enabled",
+		value: false,
+		file: "game:recipes/alloy/leadsolder.json"
+	},
+	{
+		op: "add",
+		path: "/enabled",
+		value: false,
+		file: "game:recipes/alloy/silversolder.json"
+	}
+]

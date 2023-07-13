@@ -1,0 +1,53 @@
+{
+	code: "gregstory:metalchain",
+	shape: { base: "game:item/chain" },
+	textures: {
+		material: { base: "gregstory:block/metal/sheet/{metal}1" }
+	},
+	maxstacksize: 8,
+	storageFlags: 5,
+	attributes: {
+		handbook: { groupBy: [ "metalchain-*" ] }
+	},
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "gregstory:metals" },
+	],
+	skipVariants: [ "*-invar" ],
+	texture: { base: "gregstory:block/metal/ingot/{metal}" },
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
+	__comment: "invar is placeholder",
+	materialDensityByType: {
+		"*-invar": 0
+	},
+	combustiblePropsByType: {
+		"*-invar": {
+			meltingPoint: 0,
+			meltingDuration: 30,
+			smeltedRatio: 1,
+			smeltedStack: { type: "item", code: "gregstory:ingot-invar", stacksize: 2 }
+		}
+	},
+	fpHandTransform: {
+		translation: { x: -0.35, y: -0.15, z: 0 },
+		rotation: { x: 0, y: 0, z: 79 },
+		scale: 1.8
+	},
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: -30, y: -44, z: -180 },
+		origin: { x: 0.52, y: 0.15, z: 0.5 },
+		scale: 1.85
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 90, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 4
+	},
+	tpHandTransform: {
+		translation: { x: -0.7, y: 0.1, z: -0.53 },
+		rotation: { x: 94, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 0.75
+	}
+}

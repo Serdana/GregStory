@@ -1,0 +1,24 @@
+[
+	{
+		ingredient: {
+			type: "item",
+			code: "gregstory:ingot-*",
+			name: "metal",
+			allowedVariants: [ "invar" ]
+		},
+		pattern: [
+			[
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+			]
+		],
+		output: { type: "item", code: "gregstory:metalplate-{metal}" }
+	}
+]

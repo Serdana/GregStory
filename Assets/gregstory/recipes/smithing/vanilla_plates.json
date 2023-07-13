@@ -1,0 +1,24 @@
+[
+	{
+		ingredient: {
+			type: "item",
+			code: "game:ingot-*",
+			name: "metal",
+			allowedVariants: [ "cupronickel" ]
+		},
+		pattern: [
+			[
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+				"#########",
+			]
+		],
+		output: { type: "item", code: "game:metalplate-{metal}" }
+	}
+]

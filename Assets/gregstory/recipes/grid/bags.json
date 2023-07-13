@@ -1,0 +1,22 @@
+[
+	{
+		ingredientPattern: "T,L",
+		ingredients: {
+			T: { type: "item", code: "game:flaxtwine", quantity: 8 },
+			L: { type: "block", code: "game:linen-*", quantity: 4 }
+		},
+		width: 1,
+		height: 2,
+		output: { type: "item", code: "game:linensack" }
+	},
+	{
+		ingredientPattern: "PLP",
+		ingredients: {
+			L: { type: "item", code: "game:linensack" },
+			P: { type: "item", code: "game:metalplate-*", allowedVariants: [ "tinbronze", "bismuthbronze", "blackbronze" ] }
+		},
+		width: 3,
+		height: 1,
+		output: { type: "item", code: "game:miningbag" }
+	}
+]

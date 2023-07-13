@@ -1,0 +1,44 @@
+[
+	{
+		op: "add",
+		path: "/enabled",
+		value: false,
+		file: "game:recipes/grid/miningbag.json"
+	},
+	{
+		op: "add",
+		path: "/enabled",
+		value: false,
+		file: "game:recipes/grid/linensack.json"
+	},
+	{
+		op: "replace",
+		path: "/attributes/backpack/quantitySlots",
+		value: 2,
+		file: "game:itemtypes/bag/basket.json"
+	},
+	{
+		op: "replace",
+		path: "/attributes/backpack/quantitySlots",
+		value: 3,
+		file: "game:itemtypes/bag/linensack.json"
+	},
+	{
+		op: "replace",
+		path: "/attributes/backpack/quantitySlots",
+		value: 3,
+		file: "game:itemtypes/bag/hunterbackpack.json"
+	},
+	{
+		op: "replace",
+		path: "/attributes/backpack/quantitySlots",
+		value: 4,
+		file: "game:itemtypes/bag/backpack.json"
+	},
+	{
+		op: "replace",
+		path: "/attributes/backpack/quantitySlots",
+		value: 6,
+		file: "game:itemtypes/bag/miningbag.json"
+	}
+]

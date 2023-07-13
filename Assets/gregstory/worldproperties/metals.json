@@ -1,0 +1,13 @@
+{
+	code: "metal",
+	variants: [
+		{
+			code: "invar",
+			meltPoint: 1700,
+			boilPoint: 2800,
+			density: 8110,
+			elemental: false,
+			tier: 2
+		}
+	]
+}

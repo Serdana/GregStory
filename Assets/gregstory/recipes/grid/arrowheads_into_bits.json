@@ -1,0 +1,22 @@
+[
+	{
+		ingredientPattern: "C,I",
+		ingredients: {
+			C: { type: "item", code: "game:chisel-*", isTool: true },
+			I: { type: "item", code: "game:arrowhead-*", name: "metal", allowedVariants: [ "copper", "tinbronze", "bismuthbronze", "blackbronze", "gold", "silver", "iron", "meteoriciron", "steel" ] }
+		},
+		width: 1,
+		height: 2,
+		output: { type: "item", code: "game:metalbit-{metal}", quantity: 1 }
+	},
+	{
+		ingredientPattern: "C,I",
+		ingredients: {
+			C: { type: "item", code: "game:chisel-*", isTool: true },
+			I: { type: "item", code: "game:spearhead-*", name: "metal", allowedVariants: [ "copper", "tinbronze", "bismuthbronze", "blackbronze" ] }
+		},
+		width: 1,
+		height: 2,
+		output: { type: "item", code: "game:metalbit-{metal}", quantity: 20 }
+	}
+]

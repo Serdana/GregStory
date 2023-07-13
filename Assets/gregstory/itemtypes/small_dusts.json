@@ -1,0 +1,155 @@
+{
+	code: "gregstory:small-dust",
+	__comment: "ItemNugget is just for displaying the yield in units in the tooltip",
+	class: "ItemNugget",
+	maxstacksize: 320,
+	attributes: {
+		handbook: { groupBy: [ "small-dust-*" ] }
+	},
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "game:block/metal" },
+		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
+	],
+	textures: {
+		metal: { base: "gregstory:item/metal/dust/small-{metal}" }
+	},
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
+	combustiblePropsByType: {
+		"*-copper": {
+			meltingPoint: 1084,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-copper" }
+		},
+		"*-cupronickel": {
+			meltingPoint: 1171,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-cupronickel" }
+		},
+		"*-brass": {
+			meltingPoint: 920,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-brass" }
+		},
+		"*-tinbronze": {
+			meltingPoint: 950,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-tinbronze" }
+		},
+		"*-bismuthbronze": {
+			meltingPoint: 850,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-bismuthbronze" }
+		},
+		"*-blackbronze": {
+			meltingPoint: 1020,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-blackbronze" }
+		},
+		"*-electrum": {
+			meltingPoint: 1010,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-electrum" }
+		},
+		"*-iron": {
+			meltingPoint: 1482,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-iron" }
+		},
+		"*-meteoriciron": {
+			meltingPoint: 1476,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-meteoriciron" }
+		},
+		"*-nickel": {
+			meltingPoint: 1325,
+			meltingDuration: 40,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-nickel" }
+		},
+		"*-steel": {
+			meltingPoint: 1502,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-steel" }
+		},
+		"*-gold": {
+			meltingPoint: 1063,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-gold", }
+		},
+		"*-lead": {
+			meltingPoint: 327,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-lead" }
+		},
+		"*-tin": {
+			meltingPoint: 232,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-tin" }
+		},
+		"*-chromium": {
+			meltingPoint: 1907,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-chromium" }
+		},
+		"*-platinum": {
+			meltingPoint: 1770,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-platinum" }
+		},
+		"*-titanium": {
+			meltingPoint: 1668,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-titanium" }
+		},
+		"*-zinc": {
+			meltingPoint: 419,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-zinc" }
+		},
+		"*-silver": {
+			meltingPoint: 961,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-silver" }
+		},
+		"*-bismuth": {
+			meltingPoint: 271,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-bismuth" }
+		},
+		"*-molybdochalkos": {
+			meltingPoint: 902,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "game:ingot-molybdochalkos" }
+		},
+		"*-invar": {
+			meltingPoint: 1700,
+			meltingDuration: 20,
+			smeltedRatio: 20,
+			smeltedStack: { type: "item", code: "gregstory:ingot-invar" }
+		}
+	},
+	fpHandTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 180, y: 90, z: 13 }
+	}
+}

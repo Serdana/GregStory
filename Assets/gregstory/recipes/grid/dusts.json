@@ -1,0 +1,18 @@
+[
+	{
+		ingredientPattern: "D",
+		ingredients: {
+			D: { type: "item", code: "gregstory:dust-*", name: "type" }
+		},
+		width: 1, height: 1,
+		output: { type: "item", code: "gregstory:small-dust-{type}", quantity: 5 }
+	},
+	{
+		ingredientPattern: "D",
+		ingredients: {
+			D: { type: "item", code: "gregstory:small-dust-*", name: "type", quantity: 5 }
+		},
+		width: 1, height: 1,
+		output: { type: "item", code: "gregstory:dust-{type}" }
+	}
+]

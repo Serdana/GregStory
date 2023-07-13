@@ -1,0 +1,13 @@
+[
+	{
+		ingredientPattern: "S,C",
+		ingredients: {
+			S: { type: "item", code: "game:saw-*", isTool: true, toolDurabilityCost: 25 },
+			C: { type: "block", code: "game:trunk-east" }
+		},
+		width: 1,
+		height: 2,
+		copyAttributesFrom: "C",
+		output: { type: "block", code: "game:chest-east", attributes: { type: "normal-generic" }, quantity: 2 }
+	}
+]
