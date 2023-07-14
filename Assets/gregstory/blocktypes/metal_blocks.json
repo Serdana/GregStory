@@ -1,0 +1,37 @@
+{
+	code: "gregstory:metalblock",
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "gregstory:metals" }
+	],
+	sidesolid: { all: true },
+	sideopaque: { all: true },
+	blockmaterial: "Metal",
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
+	replaceable: 300,
+	resistance: 2,
+	lightAbsorption: 1,
+	emitSideAo: { all: false },
+	textures: {
+		all: {
+			base: "gregstory:block/metal/sheet/{metal}1",
+			alternates: [
+				{ base: "gregstory:block/metal/sheet/{metal}2" },
+				{ base: "gregstory:block/metal/sheet/{metal}3" },
+				{ base: "gregstory:block/metal/sheet/{metal}4" },
+				{ base: "gregstory:block/metal/sheet/{metal}5" }
+			],
+		}
+	},
+	vertexFlagsByType: {
+		"*": {
+			reflective: true,
+			windDataByType: { "*": 1 }
+		}
+	},
+	sounds: {
+		place: "game:block/chute",
+		break: "game:block/chute",
+		hit: "game:block/chute",
+		walk: "game:walk/stone"
+	}
+}

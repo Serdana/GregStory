@@ -1,0 +1,11 @@
+{
+	"type" : "code",
+	"modid" : "gregstory",
+	"name" : "Greg Story",
+	"description" : "write later",
+	"version" : "1.0.0",
+	"authors" : ["-Unknown-"],
+	"dependencies" : {
+		"game" : "1.18.6"
+	}
+}
