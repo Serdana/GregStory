@@ -1,17 +1,6 @@
 using JetBrains.Annotations;
 using Vintagestory.API.Common;
 
-// Console.WriteLine is not being displayed?
-// BUT
-// Debug.WriteLine is working?
-
-// Print any asset errors to a visible place
-
-/*
-remove combustiblePropsByType from everything except bits/nuggets/dusts?
-otherwise i need to find a way to change the melting point in every single location
-*/
-
 namespace GregStory {
 	[UsedImplicitly]
 	public class Main : ModSystem {

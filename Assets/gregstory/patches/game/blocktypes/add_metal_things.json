@@ -2,7 +2,6 @@
 	{
 		op: "remove",
 		path: "/attributes/handbook/excludeByType",
-		value: false,
 		file: "game:blocktypes/metal/sheet.json"
 	}
 ]
