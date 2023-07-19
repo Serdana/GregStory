@@ -1,0 +1,37 @@
+{
+	code: "gregstory:steamgenerator",
+	variantgroups: [
+		{ code: "side", loadFromProperties: "game:abstract/horizontalorientation" }
+	],
+	blockmaterial: "Metal",
+	creativeinventory: { general: [ "*-east" ], gregstory: [ "*-east" ] },
+	replaceable: 300,
+	resistance: 4,
+	lightAbsorption: 1,
+	behaviors: [
+		{ name: "HorizontalOrientable" },
+		{ name: "Multiblock", properties: { sizex: 1, sizey: 2, sizez: 1, cposition: { x: 0, y: 0, z: 0 } } }
+	],
+	drawtype: "json",
+	shape: { base: "gregstory:block/machines/steam_generator" },
+	shapeinventory: { base: "gregstory:block/machines/steam_generator" },
+	shapebytype: {
+		"*-north": { base: "gregstory:block/machines/steam_generator", rotateY: 0 },
+		"*-east": { base: "gregstory:block/machines/steam_generator", rotateY: 270 },
+		"*-south": { base: "gregstory:block/machines/steam_generator", rotateY: 180 },
+		"*-west": { base: "gregstory:block/machines/steam_generator", rotateY: 90 }
+	},
+	sidesolid: { all: false },
+	sideopaque: { all: false },
+	emitSideAo: { all: false },
+	textures: {
+		steam_generator_base: { base: "gregstory:block/machines/steam_generator_base" },
+		steam_generator_inside: { base: "gregstory:block/machines/steam_generator_inside" }
+	},
+	sounds: {
+		place: "game:block/chute",
+		break: "game:block/chute",
+		hit: "game:block/chute",
+		walk: "game:walk/stone"
+	}
+}

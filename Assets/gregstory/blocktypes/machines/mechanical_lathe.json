@@ -1,0 +1,45 @@
+{
+	code: "gregstory:mechanicallathe",
+	variantgroups: [
+		{ code: "side", loadFromProperties: "game:abstract/horizontalorientation" }
+	],
+	blockmaterial: "Metal",
+	creativeinventory: { general: [ "*-east" ], gregstory: [ "*-east" ] },
+	replaceable: 300,
+	resistance: 4,
+	lightAbsorption: 1,
+	behaviors: [
+		{ name: "HorizontalOrientable" },
+		{
+			name: "Multiblock",
+			propertiesByType: {
+				"*-north": { sizex: 2, sizey: 1, sizez: 1, cposition: { x: 0, y: 0, z: 0 } },
+				"*-east": { sizex: 1, sizey: 1, sizez: 2, cposition: { x: 0, y: 0, z: 0 } },
+				"*-south": { sizex: 2, sizey: 1, sizez: 1, cposition: { x: 1, y: 0, z: 0 } },
+				"*-west": { sizex: 1, sizey: 1, sizez: 2, cposition: { x: 0, y: 0, z: 1 } }
+			}
+		},
+	],
+	drawtype: "json",
+	shape: { base: "gregstory:block/machines/mechanical_lathe" },
+	shapeinventory: { base: "gregstory:block/machines/mechanical_lathe" },
+	shapebytype: {
+		"*-north": { base: "gregstory:block/machines/mechanical_lathe", rotateY: 0 },
+		"*-east": { base: "gregstory:block/machines/mechanical_lathe", rotateY: 270 },
+		"*-south": { base: "gregstory:block/machines/mechanical_lathe", rotateY: 180 },
+		"*-west": { base: "gregstory:block/machines/mechanical_lathe", rotateY: 90 }
+	},
+	sidesolid: { all: false },
+	sideopaque: { all: false },
+	emitSideAo: { all: false },
+	textures: {
+		mechanical_lathe_base: { base: "gregstory:block/machines/mechanical_lathe_base" },
+		mechanical_lathe_parts: { base: "gregstory:block/machines/mechanical_lathe_parts" }
+	},
+	sounds: {
+		place: "game:block/chute",
+		break: "game:block/chute",
+		hit: "game:block/chute",
+		walk: "game:walk/stone"
+	}
+}

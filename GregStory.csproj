@@ -23,6 +23,9 @@
 		<Reference Include="VSSurvivalMod">
 			<HintPath>D:\Games\Vintagestory 1.18.6\Mods\VSSurvivalMod.dll</HintPath>
 		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>D:\Games\Vintagestory 1.18.6\Lib\Newtonsoft.Json.dll</HintPath>
+		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>

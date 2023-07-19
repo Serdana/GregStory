@@ -9,7 +9,7 @@
 	texture: { base: "gregstory:block/metal/ingot/{metal}" },
 	combustiblePropsByType: {
 		"*-invar": {
-			meltingPoint: 1700,
+			meltingPoint: 0,
 			meltingDuration: 30,
 			smeltedRatio: 1,
 			smeltedStack: { type: "item", code: "gregstory:ingot-invar" }

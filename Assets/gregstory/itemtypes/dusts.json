@@ -16,133 +16,133 @@
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
 	combustiblePropsByType: {
 		"*-copper": {
-			meltingPoint: 1084,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-copper" }
 		},
 		"*-cupronickel": {
-			meltingPoint: 1171,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-cupronickel" }
 		},
 		"*-brass": {
-			meltingPoint: 920,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-brass" }
 		},
 		"*-tinbronze": {
-			meltingPoint: 950,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-tinbronze" }
 		},
 		"*-bismuthbronze": {
-			meltingPoint: 850,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-bismuthbronze" }
 		},
 		"*-blackbronze": {
-			meltingPoint: 1020,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-blackbronze" }
 		},
 		"*-electrum": {
-			meltingPoint: 1010,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-electrum" }
 		},
 		"*-iron": {
-			meltingPoint: 1482,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-iron" }
 		},
 		"*-meteoriciron": {
-			meltingPoint: 1476,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-meteoriciron" }
 		},
 		"*-nickel": {
-			meltingPoint: 1325,
+			meltingPoint: 0,
 			meltingDuration: 40,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-nickel" }
 		},
 		"*-steel": {
-			meltingPoint: 1502,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-steel" }
 		},
 		"*-gold": {
-			meltingPoint: 1063,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-gold", }
 		},
 		"*-lead": {
-			meltingPoint: 327,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-lead" }
 		},
 		"*-tin": {
-			meltingPoint: 232,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-tin" }
 		},
 		"*-chromium": {
-			meltingPoint: 1907,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-chromium" }
 		},
 		"*-platinum": {
-			meltingPoint: 1770,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-platinum" }
 		},
 		"*-titanium": {
-			meltingPoint: 1668,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-titanium" }
 		},
 		"*-zinc": {
-			meltingPoint: 419,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-zinc" }
 		},
 		"*-silver": {
-			meltingPoint: 961,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-silver" }
 		},
 		"*-bismuth": {
-			meltingPoint: 271,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-bismuth" }
 		},
 		"*-molybdochalkos": {
-			meltingPoint: 902,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "game:ingot-molybdochalkos" }
 		},
 		"*-invar": {
-			meltingPoint: 1700,
+			meltingPoint: 0,
 			meltingDuration: 20,
 			smeltedRatio: 4,
 			smeltedStack: { type: "item", code: "gregstory:ingot-invar" }
