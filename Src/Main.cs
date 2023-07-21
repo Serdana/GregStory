@@ -1,4 +1,6 @@
 using System.Text;
+using GregStory.Blocks;
+using GregStory.Entities.Blocks;
 using GregStory.Utils;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
@@ -10,7 +12,7 @@ namespace GregStory {
 	public class Main : ModSystem {
 		public const string ModId = "gregstory";
 
-		public static ILogger Logger { get; private set; } = default!;
+		internal static ILogger Logger { get; private set; } = default!; // TODO remove this
 
 		public override void StartPre(ICoreAPI api) => Logger = api.Logger;
 
@@ -18,13 +20,18 @@ namespace GregStory {
 			Logger.Event("#");
 			Logger.Event("GregStory is Starting!");
 			Logger.Event("#");
+
+			api.RegisterBlockClass("BlockSteamGenerator", typeof(BlockSteamGenerator));
+			api.RegisterBlockEntityClass("EntitySteamGenerator", typeof(EntitySteamGenerator));
 		}
 
 		public override void AssetsLoaded(ICoreAPI api) {
 			if (api.Side == EnumAppSide.Client) { return; }
 
+			Logger.Event("Injecting new properties into Items");
+
 			Dictionary<AssetLocation, JObject> injectAssets = new();
-			foreach (KeyValuePair<AssetLocation, JObject> pair in api.Assets.GetMany<JObject>(Logger, "itemtypes")) {
+			foreach (KeyValuePair<AssetLocation, JObject> pair in api.Assets.GetMany<JObject>(Logger, nameof(AssetCategory.itemtypes))) {
 				JObject? property = (JObject?)pair.Value.SelectToken("combustiblePropsByType");
 				if (property == null) { continue; }
 

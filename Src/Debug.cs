@@ -17,7 +17,8 @@ namespace GregStory {
 					case EnumLogType.VerboseDebug or EnumLogType.Chat or EnumLogType.Audit:
 					case EnumLogType.Notification when message.StartsWith("Message to all in group") || message.StartsWith("Track music") || message.StartsWith("Client pause"): break;
 					default:
-						api.SendChatMessage($"[Client {logType}] {string.Format(message, args)}");
+						// Crashing????
+						//api.ShowChatMessage($"[Client {logType}] {string.Format(message, args)}");
 						break;
 				}
 			};
@@ -25,7 +26,7 @@ namespace GregStory {
 
 		public override void StartServerSide(ICoreServerAPI api) {
 			api.Server.Logger.EntryAdded += (logType, message, args) => {
-				if (!api.World.AllOnlinePlayers.Any(player => player != null && ((ServerPlayer)player).ConnectionState == EnumClientState.Playing)) { return; }
+				if (!api.World.AllOnlinePlayers.Any(player => player is ServerPlayer { ConnectionState: EnumClientState.Playing, })) { return; }
 
 				switch (logType) {
 					case EnumLogType.VerboseDebug or EnumLogType.Chat or EnumLogType.Audit:

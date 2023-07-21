@@ -23,7 +23,7 @@
 	drawtype: "json",
 	shape: { base: "gregstory:block/machines/mechanical_lathe" },
 	shapeinventory: { base: "gregstory:block/machines/mechanical_lathe" },
-	shapebytype: {
+	shapeByType: {
 		"*-north": { base: "gregstory:block/machines/mechanical_lathe", rotateY: 0 },
 		"*-east": { base: "gregstory:block/machines/mechanical_lathe", rotateY: 270 },
 		"*-south": { base: "gregstory:block/machines/mechanical_lathe", rotateY: 180 },

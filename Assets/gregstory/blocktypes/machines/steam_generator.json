@@ -1,5 +1,7 @@
 {
 	code: "gregstory:steamgenerator",
+	class: "BlockSteamGenerator",
+	entityClass: "EntitySteamGenerator",
 	variantgroups: [
 		{ code: "side", loadFromProperties: "game:abstract/horizontalorientation" }
 	],
@@ -9,13 +11,14 @@
 	resistance: 4,
 	lightAbsorption: 1,
 	behaviors: [
-		{ name: "HorizontalOrientable" },
+		{ name: "HorizontalOrientable", properties: { dropBlockFace: "east" } },
+		{ name: "HeatSource" },
 		{ name: "Multiblock", properties: { sizex: 1, sizey: 2, sizez: 1, cposition: { x: 0, y: 0, z: 0 } } }
 	],
 	drawtype: "json",
 	shape: { base: "gregstory:block/machines/steam_generator" },
 	shapeinventory: { base: "gregstory:block/machines/steam_generator" },
-	shapebytype: {
+	shapeByType: {
 		"*-north": { base: "gregstory:block/machines/steam_generator", rotateY: 0 },
 		"*-east": { base: "gregstory:block/machines/steam_generator", rotateY: 270 },
 		"*-south": { base: "gregstory:block/machines/steam_generator", rotateY: 180 },
