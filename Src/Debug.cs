@@ -17,7 +17,7 @@ namespace GregStory {
 					case EnumLogType.VerboseDebug or EnumLogType.Chat or EnumLogType.Audit:
 					case EnumLogType.Notification when message.StartsWith("Message to all in group") || message.StartsWith("Track music") || message.StartsWith("Client pause"): break;
 					default:
-						// Crashing????
+						// Crashing???? figure this out
 						//api.ShowChatMessage($"[Client {logType}] {string.Format(message, args)}");
 						break;
 				}

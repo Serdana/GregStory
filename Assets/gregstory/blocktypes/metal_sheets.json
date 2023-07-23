@@ -3,7 +3,7 @@
 	class: "BlockSimpleCoating",
 	storageFlags: 5,
 	variantgroups: [
-		{ loadFromProperties: "gregstory:metals" },
+		{ code: "metal", loadFromProperties: "gregstory:metals" },
 		{ code: "side", states: [ "north", "east", "south", "west", "up", "down" ] }
 	],
 	shapebytype: {

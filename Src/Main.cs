@@ -12,14 +12,10 @@ namespace GregStory {
 	public class Main : ModSystem {
 		public const string ModId = "gregstory";
 
-		internal static ILogger Logger { get; private set; } = default!; // TODO remove this
-
-		public override void StartPre(ICoreAPI api) => Logger = api.Logger;
-
 		public override void Start(ICoreAPI api) {
-			Logger.Event("#");
-			Logger.Event("GregStory is Starting!");
-			Logger.Event("#");
+			api.Logger.Event("#");
+			api.Logger.Event("GregStory is Starting!");
+			api.Logger.Event("#");
 
 			api.RegisterBlockClass("BlockSteamGenerator", typeof(BlockSteamGenerator));
 			api.RegisterBlockEntityClass("EntitySteamGenerator", typeof(EntitySteamGenerator));
@@ -28,10 +24,10 @@ namespace GregStory {
 		public override void AssetsLoaded(ICoreAPI api) {
 			if (api.Side == EnumAppSide.Client) { return; }
 
-			Logger.Event("Injecting new properties into Items");
+			api.Logger.Event("Injecting new properties into Items");
 
 			Dictionary<AssetLocation, JObject> injectAssets = new();
-			foreach (KeyValuePair<AssetLocation, JObject> pair in api.Assets.GetMany<JObject>(Logger, nameof(AssetCategory.itemtypes))) {
+			foreach (KeyValuePair<AssetLocation, JObject> pair in api.Assets.GetMany<JObject>(api.Logger, nameof(AssetCategory.itemtypes))) {
 				JObject? property = (JObject?)pair.Value.SelectToken("combustiblePropsByType");
 				if (property == null) { continue; }
 
@@ -46,7 +42,7 @@ namespace GregStory {
 
 				if (didInject) {
 					injectAssets.Add(pair.Key, pair.Value);
-					Logger.Debug($"Injected new properties into Item: {pair.Key}");
+					api.Logger.Debug($"Injected new properties into Item: {pair.Key}");
 				}
 			}
 

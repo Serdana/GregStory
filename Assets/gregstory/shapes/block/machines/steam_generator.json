@@ -3,7 +3,8 @@
 	"textureHeight": 64,
 	"textures": {
 		"steam_generator_base": "gregstory:block/machines/steam_generator_base",
-		"steam_generator_inside": "gregstory:block/machines/steam_generator_inside"
+		"steam_generator_inside": "gregstory:block/machines/steam_generator_inside",
+		"log": "game:block/wood/firepit/log"
 	},
 	"elements": [
 		{
