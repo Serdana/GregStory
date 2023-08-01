@@ -1,0 +1,18 @@
+{
+	code: "gregstory:blank-screw",
+	maxstacksize: 128,
+	attributes: {
+		handbook: { groupBy: [ "blank-screw-*" ] },
+		displaycaseable: true,
+		shelvable: true
+	},
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "game:block/metal" },
+		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
+	],
+	shape: { base: "gregstory:item/metal/blank_screw" },
+	textures: {
+		fan: { base: "gregstory:item/metal/blank_screw/{metal}" }
+	},
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] }
+}

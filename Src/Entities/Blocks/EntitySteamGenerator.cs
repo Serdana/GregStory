@@ -1,4 +1,3 @@
-using System.Text;
 using GregStory.Utils;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -9,8 +8,11 @@ using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace GregStory.Entities.Blocks {
-	public class EntitySteamGenerator : BlockEntity, IHeatSource {
+	public class EntitySteamGenerator : BlockEntityLiquidContainer, IHeatSource {
 		public const byte MaxFuel = 11;
+		public const byte MaxWaterLiters = 10;
+		public const byte MaxSteamLiters = 10;
+
 		private static SimpleParticleProperties SmokeParticles { get; } =
 			new(1f, 1f, ColorUtil.ToRgba(128, 110, 110, 110), new(), new(), new(-0.2f, 0.3f, -0.2f), new(0.2f, 0.3f, 0.2f), 1.5f, 0f, 0.5f, model: EnumParticleModel.Quad) {
 					WindAffected = false, AddPos = new(0.75f, 0, 0.75f), AddQuantity = 0.2f, SelfPropelled = true, OpacityEvolve = new(EnumTransformFunction.LINEAR, -255f), SizeEvolve = new(EnumTransformFunction.LINEAR, 2f),
@@ -29,7 +31,16 @@ namespace GregStory.Entities.Blocks {
 		public float Temperature { get; private set; }
 		public bool IsBurning { get; private set; }
 
+		public override string InventoryClassName => "steamgenerator";
 		public bool CanIgnite => !IsBurning && FuelAmount > 0;
+
+		public EntitySteamGenerator() {
+			inventory = new InventoryGeneric(2, null, null, (id, self) => id switch {
+					0 => new ItemSlotLiquidOnly(self, MaxWaterLiters),
+					1 => new ItemSlotLiquidOnly(self, MaxSteamLiters),
+					_ => throw new ArgumentOutOfRangeException(nameof(id), id, null),
+			}) { BaseWeight = 1f, };
+		}
 
 		public override void Initialize(ICoreAPI api) {
 			base.Initialize(api);
@@ -39,6 +50,7 @@ namespace GregStory.Entities.Blocks {
 
 		private void BurnTick(float dt) {
 			double num1 = Api.World.Calendar.TotalHours - lastTickTotalHours;
+
 			if (IsBurning) {
 				if (FuelAmount > 0) {
 					int oldAmount = (int)MathF.Ceiling(FuelAmount);
@@ -49,8 +61,21 @@ namespace GregStory.Entities.Blocks {
 				if (FuelAmount <= 0) {
 					IsBurning = false;
 					MarkDirty(true);
-				} else if (Temperature < 1100) { Temperature = Math.Min(1100f, Temperature + (float)num1 * 1500f); }
-			} else if (Temperature > 0) { Temperature = Math.Max(0, Temperature - (float)num1 * 1500f); }
+				} else if (Temperature < 1100) { Temperature = Math.Min(1100f, Temperature + (float)(num1 * 1500f) * (1f - (GetContent()?.StackSize ?? 0f) / 2500f)); }
+
+				if (Temperature > 200) {
+					ItemStack? fluidStack = GetContent();
+					if (fluidStack is not { StackSize: > 0, }) { return; }
+					ItemStack steamStack = inventory[1].Itemstack;
+					if (steamStack == null) { inventory[1].Itemstack = steamStack = new(Api.World.GetItem(AssetH.FromGreg("steamportion"))); }
+
+					float change = 4 * (1 + Temperature / 1100f / 2);
+					fluidStack.StackSize = (int)MathF.Max(0, fluidStack.StackSize - change);
+					steamStack.StackSize = (int)MathF.Min(MaxSteamLiters * 100f, steamStack.StackSize + change * 5);
+				}
+
+				if (Api.Side == EnumAppSide.Server) { MarkDirty(); }
+			} else if (Temperature > 0) { Temperature = Math.Max(0, Temperature - (float)(num1 * 1500f) * (1f - (GetContent()?.StackSize ?? 0f) / 2500f)); }
 
 			lastTickTotalHours = Api.World.Calendar.TotalHours;
 		}
@@ -79,24 +104,36 @@ namespace GregStory.Entities.Blocks {
 			}
 		}
 
-		internal bool OnRightClick(IPlayer byPlayer) {
-			if (FuelAmount + 1 <= MaxFuel && !byPlayer.Entity.Controls.ShiftKey) {
-				ItemSlot activeHotbarSlot = byPlayer.InventoryManager.ActiveHotbarSlot;
-				if (activeHotbarSlot.Itemstack?.Item is not ItemFirewood) { return false; }
+		internal ClickResult OnRightClick(IPlayer byPlayer) {
+			if (!byPlayer.Entity.Controls.ShiftKey) {
+				ItemSlot slot = byPlayer.InventoryManager.ActiveHotbarSlot;
 
-				Api.World.PlaySoundAt(AssetH.FromDefault("sounds/effect/woodswitch"), byPlayer, byPlayer, range: 16f);
-				FuelAmount++;
+				if (slot.Itemstack?.Item is ItemFirewood && FuelAmount + 1 <= MaxFuel) {
+					Api.World.PlaySoundAt(AssetH.FromDefault("sounds/effect/woodswitch"), byPlayer, byPlayer, range: 16f);
+					FuelAmount++;
 
-				if (byPlayer.WorldData.CurrentGameMode != EnumGameMode.Creative) {
-					activeHotbarSlot.TakeOut(1);
-					activeHotbarSlot.MarkDirty();
+					if (byPlayer.WorldData.CurrentGameMode != EnumGameMode.Creative) {
+						slot.TakeOut(1);
+						slot.MarkDirty();
+					}
+
+					MarkDirty(true);
+					return ClickResult.WasFuel;
+				} else if (slot.Itemstack?.Block is BlockLiquidContainerBase { IsTopOpened: true, AllowHeldLiquidTransfer: true, } block) {
+					if (block.GetContent(slot.Itemstack) is { } handstack && handstack.Item.Code.ToString().Equals($"{GlobalConstants.DefaultDomain}:waterportion")) {
+						if (Temperature > 0) {
+							Temperature = Math.Max(0, Temperature - 100);
+							MarkDirty(true);
+						}
+
+						return ClickResult.WasWater;
+					}
+
+					return ClickResult.WasContainer;
 				}
-
-				MarkDirty(true);
-				return true;
 			}
 
-			return false;
+			return ClickResult.Failed;
 		}
 
 		public override void OnBlockRemoved() {
@@ -133,11 +170,6 @@ namespace GregStory.Entities.Blocks {
 			}
 
 			return modeldata;
-		}
-
-		public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc) {
-			if (FuelAmount <= 0) { return; }
-			dsc.AppendLine(Temperature <= 25 ? Lang.Get("Cold") : $"{Temperature:.0}\u00b0C");
 		}
 
 		public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldAccessForResolve) {
@@ -184,5 +216,12 @@ namespace GregStory.Entities.Blocks {
 		}
 
 		public float GetHeatStrength(IWorldAccessor world, BlockPos heatSourcePos, BlockPos heatReceiverPos) => IsBurning ? 7f : 0;
+
+		public enum ClickResult {
+			Failed,
+			WasContainer,
+			WasWater,
+			WasFuel,
+		}
 	}
 }

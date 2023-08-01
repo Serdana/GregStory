@@ -5,6 +5,8 @@
 	variantgroups: [
 		{ code: "side", loadFromProperties: "game:abstract/horizontalorientation" }
 	],
+	__comment: "This is to stop a crash. See https://github.com/anegostudios/VintageStory-Issues/issues/2968",
+	attributes: { },
 	blockmaterial: "Metal",
 	creativeinventory: { general: [ "*-east" ], gregstory: [ "*-east" ] },
 	replaceable: 300,
