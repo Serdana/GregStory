@@ -34,7 +34,6 @@
 	</ItemGroup>
 
 	<Target Name="CopyToBin" AfterTargets="AfterBuild" Condition="'$(Configuration)' == 'Debug'">
-		<Copy SourceFiles="@(AssetFiles)" DestinationFiles="@(AssetFiles->'$(BinaryDir)/Assets/%(RecursiveDir)%(Filename)%(Extension)')" />
 		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BinaryDir)" />
 		<Copy SourceFiles="$(TargetDir)/$(TargetName).pdb" DestinationFolder="$(BinaryDir)" />
 		<Copy SourceFiles="$(TargetDir)/modinfo.json" DestinationFolder="$(BinaryDir)" />
