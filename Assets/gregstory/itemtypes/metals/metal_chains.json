@@ -2,7 +2,7 @@
 	code: "gregstory:metalchain",
 	shape: { base: "game:item/chain" },
 	textures: {
-		material: { base: "gregstory:block/metal/sheet/{metal}1" }
+		material: { base: "gregstory:block/metals/sheet/{metal}1" }
 	},
 	maxstacksize: 8,
 	storageFlags: 5,
@@ -13,7 +13,7 @@
 		{ code: "metal", loadFromProperties: "gregstory:metals" },
 	],
 	skipVariants: [ "*-invar" ],
-	texture: { base: "gregstory:block/metal/ingot/{metal}" },
+	texture: { base: "gregstory:block/metals/ingot/{metal}" },
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
 	__comment: "invar is placeholder",
 	materialDensityByType: {

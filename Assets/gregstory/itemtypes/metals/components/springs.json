@@ -1,8 +1,8 @@
 {
-	code: "gregstory:screw",
-	maxstacksize: 128,
+	code: "gregstory:spring",
+	maxstacksize: 16,
 	attributes: {
-		handbook: { groupBy: [ "screw-*" ] },
+		handbook: { groupBy: [ "spring-*" ] },
 		displaycaseable: true,
 		shelvable: true
 	},
@@ -10,9 +10,9 @@
 		{ code: "metal", loadFromProperties: "game:block/metal" },
 		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
 	],
-	shape: { base: "gregstory:item/metal/screw" },
+	shape: { base: "gregstory:item/metal/components/spring" },
 	textures: {
-		fan: { base: "gregstory:item/metal/screw/{metal}" }
+		metal: { base: "gregstory:item/metal/components/{metal}" }
 	},
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] }
 }

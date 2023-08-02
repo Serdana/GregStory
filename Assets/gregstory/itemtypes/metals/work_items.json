@@ -6,7 +6,7 @@
 	variantgroups: [
 		{ code: "metal", loadFromProperties: "gregstory:metals" },
 	],
-	texture: { base: "gregstory:block/metal/ingot/{metal}" },
+	texture: { base: "gregstory:block/metals/ingot/{metal}" },
 	combustiblePropsByType: {
 		"*-invar": {
 			meltingPoint: 0,

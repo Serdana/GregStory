@@ -12,7 +12,7 @@
 					"*-gold": 'game:block/metal/ingotpileshiny',
 					"*": 'game:block/metal/ingotpile',
 				},
-				stackingTextures: { metal: "gregstory:block/metal/ingot/{metal}", },
+				stackingTextures: { metal: "gregstory:block/metals/ingot/{metal}", },
 				modelItemsToStackSizeRatio: 1,
 				stackingCapacity: 64,
 				transferQuantity: 1,
@@ -34,7 +34,7 @@
 		"*-gold": { base: "game:item/ingotshiny" },
 		"*": { base: "game:item/ingot" },
 	},
-	textures: { metal: { base: "gregstory:block/metal/ingot/{metal}" }, },
+	textures: { metal: { base: "gregstory:block/metals/ingot/{metal}" }, },
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
 	materialDensityByType: {
 		"*-invar": 8110

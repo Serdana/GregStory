@@ -15,7 +15,7 @@
 	storageFlags: 5,
 	shape: { base: "game:item/nugget" },
 	textures: {
-		ore: { base: "gregstory:block/metal/ingot/{metal}" }
+		ore: { base: "gregstory:block/metals/ingot/{metal}" }
 	},
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
 	combustiblePropsByType: {

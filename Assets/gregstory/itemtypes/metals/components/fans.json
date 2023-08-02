@@ -1,8 +1,8 @@
 {
-	code: "gregstory:spring",
-	maxstacksize: 16,
+	code: "gregstory:fan",
+	maxstacksize: 4,
 	attributes: {
-		handbook: { groupBy: [ "spring-*" ] },
+		handbook: { groupBy: [ "fan-*" ] },
 		displaycaseable: true,
 		shelvable: true
 	},
@@ -10,9 +10,9 @@
 		{ code: "metal", loadFromProperties: "game:block/metal" },
 		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
 	],
-	shape: { base: "gregstory:item/metal/spring" },
+	shape: { base: "gregstory:item/metals/components/fan" },
 	textures: {
-		fan: { base: "gregstory:item/metal/spring/{metal}" }
+		metal: { base: "gregstory:item/metals/components/{metal}" }
 	},
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] }
 }

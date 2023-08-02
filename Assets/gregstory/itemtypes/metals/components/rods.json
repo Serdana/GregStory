@@ -10,9 +10,9 @@
 		{ code: "metal", loadFromProperties: "game:block/metal" },
 		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
 	],
-	shape: { base: "gregstory:item/metal/rod" },
+	shape: { base: "gregstory:item/metals/components/rod" },
 	textures: {
-		fan: { base: "gregstory:item/metal/rod/{metal}" }
+		metal: { base: "gregstory:item/metals/components/{metal}" }
 	},
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] }
 }

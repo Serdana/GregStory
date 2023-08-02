@@ -1,8 +1,8 @@
 {
-	code: "gregstory:gear",
-	maxstacksize: 4,
+	code: "gregstory:thin-rod",
+	maxstacksize: 16,
 	attributes: {
-		handbook: { groupBy: [ "gear-*" ] },
+		handbook: { groupBy: [ "thin-rod-*" ] },
 		displaycaseable: true,
 		shelvable: true
 	},
@@ -10,9 +10,9 @@
 		{ code: "metal", loadFromProperties: "game:block/metal" },
 		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
 	],
-	shape: { base: "gregstory:item/metal/gear" },
+	shape: { base: "gregstory:item/metals/components/rod_thin" },
 	textures: {
-		fan: { base: "gregstory:item/metal/gear/{metal}" }
+		metal: { base: "gregstory:item/metals/components/{metal}" }
 	},
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] }
 }

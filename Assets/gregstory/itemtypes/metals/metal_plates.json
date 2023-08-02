@@ -8,7 +8,7 @@
 				layout: 'Stacking',
 				placeRemoveSound: 'sounds/block/plate',
 				stackingModel: 'game:block/metal/platepile',
-				stackingTextures: { metal: "gregstory:block/metal/ingot/{metal}" },
+				stackingTextures: { metal: "gregstory:block/metals/ingot/{metal}" },
 				collisionBox: { x1: 0.125, y1: 0, z1: 0.125, x2: 0.875, y2: 0.0625, z2: 0.875 },
 				cbScaleYByLayer: 1,
 				modelItemsToStackSizeRatio: 1,
@@ -27,7 +27,7 @@
 	variantgroups: [
 		{ code: "metal", loadFromProperties: "gregstory:metals" },
 	],
-	texture: { base: "gregstory:block/metal/ingot/{metal}" },
+	texture: { base: "gregstory:block/metals/ingot/{metal}" },
 	creativeinventory: { general: [ "*" ], items: [ "*" ] },
 	materialDensityByType: {
 		"*-invar": 8110
