@@ -18,9 +18,9 @@
 		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
 	],
 	heldTpIdleAnimation: "holdbothhands",
-	shape: { base: "gregstory:item/metal/dust" },
+	shape: { base: "gregstory:item/metals/dust" },
 	textures: {
-		dust: { base: "gregstory:item/metal/dust/{metal}" }
+		dust: { base: "gregstory:item/metals/dust/{metal}" }
 	},
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
 	combustiblePropsByType: {
