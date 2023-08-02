@@ -24,12 +24,13 @@
 	},
 	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
 	guiTransform: {
-		translation: { x: 16, y: -14, z: 0 },
+		translation: { x: 0, y: 0, z: 0 },
 		rotation: { x: -90, y: -10, z: -20 },
+		origin: { x: 0.325, y: 0.5, z: 0.5 },
 		scale: 1.5
 	},
 	fpHandTransform: {
-		translation: { x: 0.25, y: 0, z: 0 },
+		translation: { x: 0.25, y: -0.25, z: 0 },
 		rotation: { x: 180, y: 0, z: -65 },
 		scale: 1.5
 	},
