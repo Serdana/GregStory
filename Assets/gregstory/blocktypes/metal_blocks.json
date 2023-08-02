@@ -13,12 +13,12 @@
 	emitSideAo: { all: false },
 	textures: {
 		all: {
-			base: "gregstory:block/metal/sheet/{metal}1",
+			base: "gregstory:block/metals/sheet/{metal}1",
 			alternates: [
-				{ base: "gregstory:block/metal/sheet/{metal}2" },
-				{ base: "gregstory:block/metal/sheet/{metal}3" },
-				{ base: "gregstory:block/metal/sheet/{metal}4" },
-				{ base: "gregstory:block/metal/sheet/{metal}5" }
+				{ base: "gregstory:block/metals/sheet/{metal}2" },
+				{ base: "gregstory:block/metals/sheet/{metal}3" },
+				{ base: "gregstory:block/metals/sheet/{metal}4" },
+				{ base: "gregstory:block/metals/sheet/{metal}5" }
 			],
 		}
 	},

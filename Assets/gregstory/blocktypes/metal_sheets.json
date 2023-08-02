@@ -3,7 +3,7 @@
 	class: "BlockSimpleCoating",
 	storageFlags: 5,
 	variantgroups: [
-		{ loadFromProperties: "gregstory:metals" },
+		{ code: "metal", loadFromProperties: "gregstory:metals" },
 		{ code: "side", states: [ "north", "east", "south", "west", "up", "down" ] }
 	],
 	shapebytype: {
@@ -37,7 +37,7 @@
 	lightAbsorption: 1,
 	emitSideAo: { all: false },
 	textures: {
-		all: { base: "gregstory:block/metal/sheet/{metal}*" }
+		all: { base: "gregstory:block/metals/sheet/{metal}*" }
 	},
 	selectionbox: {
 		x1: 0, y1: 0, z1: 0, x2: 1, y2: 0.0625, z2: 1,

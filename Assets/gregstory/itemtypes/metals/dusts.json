@@ -1,0 +1,181 @@
+{
+	code: "gregstory:dust",
+	__comment: "ItemNugget is just for displaying the yield in units in the tooltip",
+	class: "ItemNugget",
+	maxstacksize: 64,
+	attributes: {
+		handbook: { groupBy: [ "dust-*" ] },
+		displaycaseable: true,
+		shelvable: true,
+		onDisplayTransform: {
+			translation: { x: 0.05, y: 0, z: 0 },
+			origin: { x: 0.5, y: 0, z: 0.5 },
+			scale: 0.65
+		}
+	},
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "game:block/metal" },
+		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
+	],
+	heldTpIdleAnimation: "holdbothhands",
+	shape: { base: "gregstory:item/metals/dust" },
+	textures: {
+		dust: { base: "gregstory:item/metals/dust/{metal}" }
+	},
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
+	combustiblePropsByType: {
+		"*-copper": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-copper" }
+		},
+		"*-cupronickel": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-cupronickel" }
+		},
+		"*-brass": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-brass" }
+		},
+		"*-tinbronze": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-tinbronze" }
+		},
+		"*-bismuthbronze": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-bismuthbronze" }
+		},
+		"*-blackbronze": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-blackbronze" }
+		},
+		"*-electrum": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-electrum" }
+		},
+		"*-iron": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-iron" }
+		},
+		"*-meteoriciron": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-meteoriciron" }
+		},
+		"*-nickel": {
+			meltingPoint: 0,
+			meltingDuration: 40,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-nickel" }
+		},
+		"*-steel": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-steel" }
+		},
+		"*-gold": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-gold", }
+		},
+		"*-lead": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-lead" }
+		},
+		"*-tin": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-tin" }
+		},
+		"*-chromium": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-chromium" }
+		},
+		"*-platinum": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-platinum" }
+		},
+		"*-titanium": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-titanium" }
+		},
+		"*-zinc": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-zinc" }
+		},
+		"*-silver": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-silver" }
+		},
+		"*-bismuth": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-bismuth" }
+		},
+		"*-molybdochalkos": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "game:ingot-molybdochalkos" }
+		},
+		"*-invar": {
+			meltingPoint: 0,
+			meltingDuration: 20,
+			smeltedRatio: 4,
+			smeltedStack: { type: "item", code: "gregstory:ingot-invar" }
+		}
+	},
+	guiTransform: {
+		translation: { x: 3, y: 1, z: -25 },
+		rotation: { x: 149, y: 12, z: 0 },
+		origin: { x: 0.4, y: -0.1, z: 0.8 },
+		scale: 2.54
+	},
+	fpHandTransform: {
+		rotation: { x: 54, y: 95, z: -31 },
+		scale: 1.34
+	},
+	tpHandTransform: {
+		translation: { x: -1.67, y: -1.25, z: -0.8 },
+		rotation: { x: 70, y: 11, z: -65 },
+		scale: 0.41
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.2, z: 0 },
+		rotation: { x: -4, y: 8, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0.5299 },
+		scale: 1.92
+	}
+}

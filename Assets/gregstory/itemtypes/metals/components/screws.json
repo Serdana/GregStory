@@ -1,0 +1,18 @@
+{
+	code: "gregstory:screw",
+	maxstacksize: 128,
+	attributes: {
+		handbook: { groupBy: [ "screw-*" ] },
+		displaycaseable: true,
+		shelvable: true
+	},
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "game:block/metal" },
+		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
+	],
+	shape: { base: "gregstory:item/metals/components/screw" },
+	textures: {
+		metal: { base: "gregstory:item/metals/components/{metal}" }
+	},
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] }
+}

@@ -1,0 +1,48 @@
+{
+	code: "gregstory:thin-rod",
+	maxstacksize: 32,
+	attributes: {
+		handbook: { groupBy: [ "thin-rod-*" ] },
+		displaycaseable: true,
+		shelvable: true,
+		onDisplayTransform: {
+			translation: { x: 0, y: -0.4875, z: 0 },
+			rotation: { x: 90, y: 0, z: 0 },
+			scale: 0.5
+		},
+		onshelfTransform: {
+			translation: { x: 0, y: -0.4875, z: 0 },
+			rotation: { x: 90, y: 0, z: 45 },
+			scale: 0.5
+		}
+	},
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "game:block/metal" },
+		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
+	],
+	shape: { base: "gregstory:item/metals/components/rod_thin" },
+	textures: {
+		metal: { base: "gregstory:item/metals/components/{metal}" }
+	},
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 20, y: -10, z: 30 },
+		origin: { x: 0.5, y: 0.5, z: 0.5 },
+		scale: 1.5
+	},
+	fpHandTransform: {
+		scale: 1.5
+	},
+	tpHandTransform: {
+		translation: { x: -1.5, y: -0.9, z: -1 },
+		rotation: { x: 0, y: 0, z: -90 },
+		scale: 0.5
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 90, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0.5, z: 0.5299 },
+		scale: 1.5
+	}
+}

@@ -1,0 +1,18 @@
+{
+	code: "gregstory:spring",
+	maxstacksize: 16,
+	attributes: {
+		handbook: { groupBy: [ "spring-*" ] },
+		displaycaseable: true,
+		shelvable: true
+	},
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "game:block/metal" },
+		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
+	],
+	shape: { base: "gregstory:item/metals/components/spring" },
+	textures: {
+		metal: { base: "gregstory:item/metals/components/{metal}" }
+	},
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] }
+}

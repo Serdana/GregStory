@@ -1,0 +1,20 @@
+{
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"elements": [
+		{
+			"name": "Rod",
+			"from": [ 6.5, 0.0, 6.5 ],
+			"to": [ 9.5, 16.0, 9.5 ],
+			"rotationOrigin": [ 6.5, 0.0, 6.5 ],
+			"faces": {
+				"north": { "texture": "#metal", "uv": [ 6.5, 0.0, 9.5, 16.0 ] },
+				"east": { "texture": "#metal", "uv": [ 6.5, 0.0, 9.5, 16.0 ] },
+				"south": { "texture": "#metal", "uv": [ 6.5, 0.0, 9.5, 16.0 ] },
+				"west": { "texture": "#metal", "uv": [ 6.5, 0.0, 9.5, 16.0 ] },
+				"up": { "texture": "#metal", "uv": [ 6.5, 0.0, 9.5, 3.0 ] },
+				"down": { "texture": "#metal", "uv": [ 6.5, 13.0, 9.5, 16.0 ] }
+			}
+		}
+	]
+}

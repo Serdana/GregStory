@@ -1,0 +1,45 @@
+{
+	code: "gregstory:gear",
+	maxstacksize: 4,
+	attributes: {
+		handbook: { groupBy: [ "gear-*" ] },
+		displaycaseable: true,
+		shelvable: true,
+		onDisplayTransform: {
+			translation: { x: 0, y: -0.25, z: 0 },
+			scale: 0.5
+		},
+		onshelfTransform: {
+			translation: { x: 0, y: -0.25, z: 0 },
+			scale: 0.5
+		}
+	},
+	variantgroups: [
+		{ code: "metal", loadFromProperties: "game:block/metal" },
+		{ code: "metal", loadFromProperties: "gregstory:metals", combine: "Add" }
+	],
+	shape: { base: "gregstory:item/metals/components/gear" },
+	textures: {
+		metal: { base: "gregstory:item/metals/components/{metal}" }
+	},
+	creativeinventory: { general: [ "*" ], gregstory: [ "*" ] },
+	guiTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: -90, y: -10, z: -20 },
+		origin: { x: 0.325, y: 0.5, z: 0.5 },
+		scale: 1.5
+	},
+	fpHandTransform: {
+		translation: { x: 0.25, y: -0.25, z: 0 },
+		rotation: { x: 180, y: 0, z: -65 },
+		scale: 1.5
+	},
+	tpHandTransform: {
+		translation: { x: -1.5, y: -1.25, z: -1.4 }
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0.15, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		scale: 1.5
+	}
+}
