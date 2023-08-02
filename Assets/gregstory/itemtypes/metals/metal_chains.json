@@ -19,14 +19,6 @@
 	materialDensityByType: {
 		"*-invar": 0
 	},
-	combustiblePropsByType: {
-		"*-invar": {
-			meltingPoint: 0,
-			meltingDuration: 30,
-			smeltedRatio: 1,
-			smeltedStack: { type: "item", code: "gregstory:ingot-invar", stacksize: 2 }
-		}
-	},
 	fpHandTransform: {
 		translation: { x: -0.35, y: -0.15, z: 0 },
 		rotation: { x: 0, y: 0, z: 79 },
